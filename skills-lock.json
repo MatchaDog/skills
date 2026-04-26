@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "skill-creator": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "b122f4d1e91aa1d83027e050b5b37c3156203ee85458d7b1360bc48167c9e02a"
+    },
+    "skills-skills": {
+      "source": "tukuaiai/vibe-coding-cn",
+      "sourceType": "github",
+      "computedHash": "69f56527eb6a164a29cb3c8c473a061db7a8d736c77c61b9dacf4710315241a6"
+    }
+  }
+}
