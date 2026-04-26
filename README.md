@@ -7,14 +7,14 @@
 安装团队新项目脚手架规范：
 
 ```bash
-npx skills add https://github.com/<org>/<repo> --skill team-project-scaffold
+npx skills add https://github.com/<org>/<repo> --skill web-scaffold
 ```
 
 将 `<org>/<repo>` 替换为本仓库发布后的 GitHub 地址。
 
 ## 当前 Skills
 
-- `team-project-scaffold`: 团队新项目脚手架和工程规范，覆盖通用文档驱动开发、前端、React、Vue、Node.js 后端。
+- `web-scaffold`: 团队新项目脚手架和工程规范，覆盖通用文档驱动开发、前端、React、Vue、Node.js 后端。
 
 ## 目录约定
 
