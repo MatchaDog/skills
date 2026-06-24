@@ -30,8 +30,8 @@ description: "团队新项目脚手架和工程规范 Skill。Use when creating,
 3. 如果有前端，读取 `references/frontend.md`。
 4. 如果是 React，读取 `references/react.md`，并先安装指定 React skill。
 5. 如果是 Vue，读取 `references/vue.md`，并先安装指定 Vue skill。
-6. 如果是 Node.js 后端，读取 `references/nodejs.md`，并先安装指定 Node.js skill。
-7. 建立或补齐文档目录，再开始代码变更。
+6. 如果是 Node.js 后端，读取 `references/nodejs.md`，并先安装指定 Node.js skill；后端任务默认按受限执行、最小 diff、反例测试和 AI PR 检查清单执行。
+7. 建立或补齐文档目录；重大功能或高风险改动先用 plan mode 产出编号 design doc，再基于 design doc 写实现 plan。
 8. 交付前运行项目已有质量检查；没有检查脚本时，至少说明缺口并补齐建议脚本。
 
 安装本 skill 的仓库结构必须保持：
@@ -102,20 +102,20 @@ npx skills add https://github.com/wshobson/agents --skill nodejs-backend-pattern
 ### Example 3: 创建 Node.js API 服务
 
 - Input: “新建一个 Node.js 后端服务，给前端联调。”
-- Steps: 安装 superpowers 和 nodejs-backend-patterns；读取 universal、nodejs；选定框架后建立 OpenAPI/Swagger、Zod schema、接口文档、部署文档。
-- Acceptance: 每个接口都有入参和响应类型；Zod 统一校验输入；Swagger 可供前端调试；文档说明鉴权、错误码和部署流程。
+- Steps: 安装 superpowers 和 nodejs-backend-patterns；读取 universal、nodejs；选定框架后建立 OpenAPI/Swagger、Zod schema、接口文档、部署文档；后端变更先写任务合同和反例测试。
+- Acceptance: 每个接口都有入参和响应类型；Zod 统一校验输入；Swagger 可供前端调试；文档说明鉴权、错误码和部署流程；高风险逻辑有权限、事务、幂等、兼容性和回滚风险说明。
 
 ## References
 
 - `references/index.md`: 参考文件导航。
-- `references/universal.md`: 所有项目必须遵守的通用规范和文档驱动开发要求。
+- `references/universal.md`: 所有项目必须遵守的通用规范、文档驱动开发和重大改动 design doc 要求。
 - `references/frontend.md`: 前端项目的技术选型、配置、请求层和质量门禁。
 - `references/react.md`: React 项目的状态、组件、接口数据和 useEffect 约束。
 - `references/vue.md`: Vue 项目的组件命名、拆分和接口数据约束。
-- `references/nodejs.md`: Node.js 后端的 Swagger、Zod、接口类型和联调规范。
+- `references/nodejs.md`: Node.js 后端的 Codex 使用边界、最小差异合同、Swagger、Zod、接口类型、测试和联调规范。
 
 ## Maintenance
 
 - Sources: 用户提供的团队约束；skills.sh / `npx skills` CLI 的公开安装约定；skill-creator 与 skills-skills 的本地规范。
-- Last updated: 2026-04-26
+- Last updated: 2026-06-24
 - Known limits: 第三方 skill 的真实 skill 名称和仓库结构可能变化；安装前如失败，先使用 `npx skills add <repo> --list` 或查看对应仓库确认名称。

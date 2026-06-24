@@ -63,12 +63,51 @@ export function filter-visible-menus(
 
 中国传统互联网研发环境里，需求、接口、排期、联调、上线、复盘经常跨产品、设计、前端、后端、测试、运维和管理层流转。文档驱动开发能让 AI 和团队成员共享同一套上下文，减少口头约定丢失。
 
+## 重大改动前的设计文档
+
+AI coding 的通用实践：每次做重大功能、架构调整、跨模块改动或高风险修复之前，先用 plan mode 做 research / design doc，再基于这个 doc 制定实现计划。
+
+design doc 必须编号保存到 `docs/design-docs/`，并随代码 commit 进仓库。它类似设计思路的 db migrations，记录项目演进过程中每次重要判断、方案取舍和上下文脉络。
+
+文件命名格式：
+
+```text
+docs/design-docs/
+  0001-user-auth-flow.md
+  0002-order-state-machine-refactor.md
+  0003-payment-webhook-idempotency.md
+```
+
+编号规则：
+
+- 使用 4 位递增编号，从 `0001` 开始。
+- 文件名使用 kebab-case。
+- 一个 design doc 对应一个重大功能、改动主题或决策主题。
+- 已合并的 design doc 不重写历史；如设计变化，新增后续编号文档，并在新文档里引用旧文档。
+
+design doc 至少包含：
+
+- 背景和目标。
+- 当前实现或问题分析。
+- 约束条件和不做什么。
+- 可选方案和取舍。
+- 最终方案。
+- 影响范围。
+- 风险、回滚和兼容性。
+- 测试与验收计划。
+- 未决问题。
+- 后续实现 plan 链接或任务列表。
+
+实现计划必须引用对应 design doc。没有 design doc 的重大改动，不应直接进入实现。
+
 ## 推荐文档目录
 
 根据项目规模建立 `docs/`。小项目可以合并文件，但不能缺少对应信息。
 
 ```text
 docs/
+  design-docs/
+    0001-example.md
   requirements.md
   api.md
   task-breakdown.md
@@ -165,11 +204,14 @@ README.md
 - 取舍原因。
 - 影响范围。
 
+`docs/decisions.md` 记录短决策和索引；重大功能或复杂取舍写入 `docs/design-docs/` 的编号 design doc，并在 `docs/decisions.md` 中链接。
+
 ## 文档写作要求
 
 - 默认中文编写。
 - 面向企业内部知识库，避免只有作者能懂的缩写。
 - 每个文档都要有清晰标题、更新时间、适用范围。
+- 重大功能或高风险改动必须先有编号 design doc，再有实现 plan。
 - 需求和接口发生变化时，同步更新文档，不允许只改代码。
 - AI 生成文档时，使用 humanizer-zh 做中文表达校正，但保留技术准确性。
 
@@ -183,4 +225,5 @@ README.md
 - 必备文档存在，并且不是空模板。
 - README 指向 docs 下的关键文档。
 - 重要需求、接口、部署步骤可追溯。
+- 重大功能、高风险修复或跨模块改动有 `docs/design-docs/` 编号 design doc。
 - 所有偏离本规范的地方写入 `docs/decisions.md`。
