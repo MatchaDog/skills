@@ -1,0 +1,4 @@
+interface:
+  display_name: "精简代码与深模块"
+  short_description: "阻止自造轮子、巨型文件和浅层抽象，保持代码边界清晰"
+  default_prompt: "使用 $lean-code 规划或审查这次实现，优先复用成熟能力，在开发前控制文件增长并避免浅层抽象。"

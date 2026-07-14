@@ -17,7 +17,7 @@ npx skills add https://github.com/<org>/<repo> --skill maintaining-requirement-t
 ## 当前 Skills
 
 - `web-scaffold`: 创建或按现有约定维护 TypeScript 前端与 Node.js 项目；既有项目禁止无关迁移，新项目才应用团队默认，并要求功能、修复和重构采用 TDD。
-- `lean-code`: 审查和精简自造轮子、过度抽象、巨型文件及不必要依赖。
+- `lean-code`: 在实现前阻止自造轮子和巨型文件，按深模块原则治理过度抽象、职责混杂及不必要依赖，并要求开发与重构采用 TDD。
 - `maintaining-requirement-traceability`: 用技术栈无关的稳定锚点连接需求来源、当前实现和验证证据，不强制引入集中索引或重型 Spec 流程。
 
 名称迁移：原内部名称 `$team-project-scaffold` 已与目录名统一为 `$web-scaffold`，旧提示请同步更新。
