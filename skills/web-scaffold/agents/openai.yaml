@@ -1,4 +1,4 @@
 interface:
-  display_name: "Team Project Scaffold"
-  short_description: "团队新项目脚手架与工程规范"
-  default_prompt: "Use $web-scaffold to bootstrap a TypeScript frontend, React, Vue, or Node.js project with proportionate team conventions."
+  display_name: "Web Scaffold"
+  short_description: "创建或按现有约定维护 TypeScript Web 与 Node.js 项目"
+  default_prompt: "Use $web-scaffold to create, review, or change a TypeScript frontend or Node.js project while preserving existing project conventions."
