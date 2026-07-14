@@ -1,0 +1,4 @@
+interface:
+  display_name: "通用需求追踪"
+  short_description: "维护需求来源、稳定锚点、当前实现和验证证据之间的关系"
+  default_prompt: "Use $maintaining-requirement-traceability to establish lightweight, technology-neutral links between requirements, system anchors, current implementations, and verification evidence."

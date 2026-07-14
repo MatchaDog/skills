@@ -2,9 +2,9 @@
 
 Vue 项目读取本文件。本文件只记录团队差异化约束；Vue 通用最佳实践交给上游 skill。
 
-## 必装 Skill
+## 按需 Skill
 
-Vue 项目默认先执行：
+涉及复杂响应式、性能或组件设计，并且当前环境没有等价能力时再安装：
 
 ```bash
 npx skills add https://github.com/hyf0/vue-skills --skill vue-best-practices
@@ -16,7 +16,7 @@ npx skills add https://github.com/hyf0/vue-skills --skill vue-best-practices
 npx skills add https://github.com/hyf0/vue-skills --list
 ```
 
-确认 skill 名称后再安装。
+确认 skill 名称后再安装。安装失败不阻断基础项目初始化。
 
 ## 组件命名
 
@@ -82,7 +82,7 @@ src/
 
 ## 交付检查
 
-- 已安装或已提示安装 vue-best-practices。
+- 任务达到按需条件时已加载 vue-best-practices；普通初始化无需安装或提示。
 - template 中组件使用短横线写法。
 - import 中组件符号使用驼峰或 PascalCase。
 - 远端数据由 TanStack Query 管理。

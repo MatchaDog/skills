@@ -2,9 +2,9 @@
 
 React 项目读取本文件。本文件只记录团队差异化约束；React 通用最佳实践交给上游 skill。
 
-## 必装 Skill
+## 按需 Skill
 
-React 项目默认先执行：
+涉及复杂性能、渲染或组件设计，并且当前环境没有等价能力时再安装：
 
 ```bash
 npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-best-practices
@@ -16,7 +16,7 @@ npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-
 npx skills add https://github.com/vercel-labs/agent-skills --list
 ```
 
-确认 skill 名称后再安装。
+确认 skill 名称后再安装。安装失败不阻断基础项目初始化。
 
 ## Props 与状态
 
@@ -81,7 +81,7 @@ src/
 
 ## 交付检查
 
-- 已安装或已提示安装 vercel-react-best-practices。
+- 任务达到按需条件时已加载 vercel-react-best-practices；普通初始化无需安装或提示。
 - pure component 和业务组件边界清晰。
 - 没有无意义 props drilling。
 - 远端数据由 TanStack Query 管理。

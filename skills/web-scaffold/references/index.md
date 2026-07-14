@@ -4,7 +4,7 @@
 
 ## 文件导航
 
-- `universal.md`: 所有项目都必须读取。包含目录命名、基础 skill、文档驱动开发、文档目录和验收标准。
+- `universal.md`: 所有项目都必须读取。包含目录命名、Skill 协作、文档分级、轻量需求追踪和验收标准。
 - `frontend.md`: 有浏览器端或前端工程时读取。包含 TypeScript、Tailwind、Rsbuild、Biome、请求层、包管理、国内源等规范。
 - `react.md`: React 项目读取。包含 vercel-react-best-practices 安装、props、状态管理、TanStack Query、useEffect 和组件拆分。
 - `vue.md`: Vue 项目读取。包含 vue-best-practices 安装、template 命名、import 命名、组件拆分、TanStack Query。
@@ -16,7 +16,7 @@
 2. 前端项目继续读 `frontend.md`。
 3. React、Vue、Node.js 根据技术栈读取对应文件。
 4. full-stack 项目读取 `universal.md`、`frontend.md`、对应前端框架文件和 `nodejs.md`。
-5. 如果用户明确指定了与本规范不同的技术方案，记录偏离原因，并在文档中写明。
+5. 如果用户明确指定了与本规范不同的技术方案，按用户决策执行；只有影响长期维护时才记录偏离原因。
 
 ## 第三方 Skill 原则
 
