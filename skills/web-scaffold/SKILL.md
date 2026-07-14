@@ -14,6 +14,8 @@ description: Use when creating, initializing, reviewing, or standardizing TypeSc
 - 不预建空目录、共享层、请求层或状态库；出现真实消费者再提取。
 - 缺少关键上下文时，只询问会改变实现方向的问题。
 
+**REQUIRED DESIGN SUB-SKILL:** 当需求、前后端边界、权限、数据模型、部署方式或架构选择仍会改变实现方向时，必须使用 `grill-me`。一次只解决一个决策分支，每问给出推荐答案；能从代码和配置查明的内容直接探索，不询问用户。关键决策收敛并形成方案、获得确认后，才能进入 TDD。范围清楚的局部任务不调用。
+
 **REQUIRED SUB-SKILL:** 实现新功能、Bug 修复、重构或行为变化时，必须使用 `superpowers:test-driven-development`。缺失时停止实现，只安装该子 Skill：
 
 ```bash
@@ -31,8 +33,9 @@ npx skills add https://github.com/obra/superpowers --skill test-driven-developme
    - React：再读 `references/react.md`
    - Vue：再读 `references/vue.md`
    - Node.js：`references/nodejs.md`
-4. 用 TDD 完成一个可独立验收的目标；超出确认边界时停止并重新确认。
-5. 运行项目已有的测试、类型检查、Lint 和构建；没有对应检查时报告缺口，不为当前任务无关地改造工具链。
+4. 存在会改变实现方向的未决问题时，使用 `grill-me` 收敛方案并等待确认。
+5. 用 TDD 完成一个可独立验收的目标；超出确认边界时停止并重新确认。
+6. 运行项目已有的测试、类型检查、Lint 和构建；没有对应检查时报告缺口，不为当前任务无关地改造工具链。
 
 ## 文档与追踪
 
